@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window내장객체</title>
+    <script>
+        var popup;
+        //함수생성하기
+        function windowOpen(){
+            //팝업창 띄우기
+            //window내장객체의 open()메소드를 이용하여 새창을 띄울 수 있다.
+            //1. 팝업창에 표시할 컨텐츠가 있는 파일명
+            //2. 창이름 : 같은 창이 1개만 열리도록 설정할 수 있다.
+            //3. 옵션(width,height, left, top)
+            popup=window.open("popup.html","pop","width=300px, height=400px, left=300px, top=200px");
+        }
+        //팝업창 닫기
+        function windowClose(){
+            popup.close(); //popup변수에 있는 window가 닫힌다.
+            //window.close(); //현재 창을 닫는다.    
+            //self.close(); //위와 결과는 같음
+        }
+        //창이동하기
+        function windowMove(){
+            // moveTo(x,y); //절대좌표로 이동한다.
+            // popup.moveTo(500,400);
+            // moveBy(x,y); //상대좌표로 이동한다.
+            popup.moveBy(10,10);
+        }
+        //창크기설정
+        function windowSize(){
+            //resizeTo(w,h) : 절대크기로 설정
+            //popup.resizeTo(600,500);
+            //resizeBy(w,h) : 상대크기로 설정
+            popup.resizeBy(10,10);
+        }
+        //현재윈도우의 정보구하기
+        function winInfor(){
+            var inforTxt="";
+            //좌표구하기
+            inforTxt += "<li>x좌표=" + window.screenX+"</li>"; 
+            inforTxt += "<li>y좌표=" + window.screenY+"</li>";
+
+            //윈도우의 폭과 높이
+            //창전체 폭과 높이
+            inforTxt +="<li>창폭="+window.outerWidth+"</li>"; //경계선+메뉴+툴바
+            inforTxt +="<li>창높이="+window.outerHeight+"</li>"; //경계선+메뉴+툴바
+            //경계선, 메뉴, 툴바등을 제외한 폭과 높이
+            inforTxt +="<li>컨텐츠폭="+window.innerWidth+"</li>";
+            inforTxt +="<li>컨텐츠높이="+window.innerHeight+"</li>";
+            
+            //screen의 해상도구하기
+            //작업표시줄 포함하여 폭과 높이 구하기
+            inforTxt +="<li>screen폭="+screen.width+"</li>";
+            inforTxt +="<li>screen폭="+screen.height+"</li>";
+
+            //작업표시줄 제외하고 폭과 높이 구하기
+            inforTxt +="<li>screenavail폭="+screen.availWidth+"</li>";
+            inforTxt +="<li>screenavail폭="+screen.availHeight+"</li>";
+
+            //document.getElementById("winInfor")
+            document.querySelector("#winInfor").innerHTML = inforTxt;
+        }
+    </script>
+</head>
+<!--현재 페이지가 실행이 완료되면 onload이벤트가 발생한다.-->
+<body onload="winInfor();windowOpen();">
+    <input type="button" value="판업창 띄우기" onclick="windowOpen()"/>
+    <input type="button" value="팝업창 닫기" onclick="windowClose()"/>
+    <input type="button" value="윈도우이동하기" onclick="windowMove()"/>
+    <input type="button" value="윈도우크기조절하기" onclick="windowSize()"/>
+    <ol id="winInfor">
+    </ol>
+</body>
+</html>
