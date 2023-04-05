@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var imgName=['flower.jpg', 'tree.jpg', 'nate_logo.png', 'jeju_map.jpg','glass1.gif','glass2.gif','glass3.gif'];
+        function setImage(){
+            var imgTag="";
+            for(var i=0; i<imgName.length; i++){//0,1,2,3,4
+                imgTag +="<img src='../img/"+imgName[i]+"'/><br/>"
+            }
+            console.log(imgTag);
+            document.getElementById("imgView").innerHTML=imgTag;
+
+            //현재 스크롤바의 위치
+            console.log(window.scrollY, document.documentElement.scrollTop);
+
+            // window.scrollTo(x,y): 절대좌표, window.scrollTo(x,y): 상대좌표
+        }
+        function scrollAuto(){
+            window.scrollBy(0,10);
+            console.log('y=', window.scrollY);
+        }
+        var timer;
+    </script>
+</head>
+<body onload="setImage(); timer=setInterval('scrollAuto()',500);">
+    <h1>스크롤 이벤트</h1>
+    <!-- onmouseover(onmouseenter) : 객체 마우스 들어오면
+         onmouseout(onmouseleave) : 객체 마우스 나가면
+    -->
+    <div id="imgView" onmouseover="clearInterval(timer)" onmouseout="timer=setInterval('scrollAuto()',500)"></div>
+    
+</body>
+</html>
