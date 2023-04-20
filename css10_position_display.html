@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            border:1px solid gray;
+        }
+        /*left, top, right, bottom*/
+        /* 
+        position : 좌표를 지정하기 위해서는 absolute, relative, fixed 속성이 설정되어야 한다.
+                   태그의 기본 position은 static이며 좌표가 설정되지 않는다.
+
+            absolute: 공간을 반납하고 좌표에 의해 본인은 자유롭게 움직인다.
+            relative: 공간을 유지한다. 좌표의 기준이 원위치로 좌표의 기준을 잡는다.
+            fixed : 공간을 반납한다. 현재보이는 ㅘ면에서 고정이라 배너처럼 움직인다.
+        z-index: 겹칠때 위아래순서 조정가능 숫자가 높을수록 위에 표시된다.
+                 포지션 속성이 absolute,relative,fixed이어야 한다.
+        */
+        .div1{
+            background: pink;
+            position: fixed;
+            right: 100px;
+            bottom: 10px;
+        }
+        .div2{
+            background:lightblue;
+            position: absolute; /*이 값을 무조건 입력해야 left등을 입력가능하다*/
+            left:100px;
+            top:100px;
+            z-index:100; /*객체가 겹칠 때 순서정하기 정수 값이 클수록 위에 위치한다.*/
+        }
+        .div3{
+            background: olivedrab;
+            position: relative;
+            left: 200px;
+            top: -100px;
+        }
+        .div4{
+            background: coral;
+            z-index:101;
+        }
+        img{
+            width:100px;
+            height:100px;
+        }
+        /*
+        하위객체의 좌표 설정은 상위에 객체의 position이 absolute, relative, fixed인 경우 해당객체가 기준점이다.
+        static이면 body기준점이 된다.
+        */
+        #i1{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        #i2{
+            position:absolute;
+            top:50px;
+            left:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <img src="./img/flower.jpg" id="i1"/>
+    </div>
+    <div class="div3"></div>
+    <div class="div4">
+        <img src="./img/tree.jpg" id="i2"/>
+    </div>
+</body>
+</html>
