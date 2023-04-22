@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:800px;
+            height:150px;
+            line-height: 150px;
+            font-size: 5em;
+            border:1px solid #888;
+            margin:100px;
+            text-align: center;
+        }
+        /*문자에 그림자 설정하기*/
+        #txt{            /*L,R     T,B     번짐    색상 순서대로 적어야됨*/
+            text-shadow: -10px    -10px   10px   gray;
+        }
+        /*박스에 그림자 설정하기*/
+        #box{
+            box-shadow: -10px   -10px  10px  red;  
+        }
+        /*그라데이션
+            http://colorzilla.com/gradient-editor
+        */
+        #gradient{
+            height:800px;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#47ff32+15,fcfc28+37,fcfc28+37,207cca+52,2989d8+62,ff3030+69,7db9e8+100&0.8+24,0.92+91 */
+background: -moz-linear-gradient(top,  rgba(71,255,50,0.8) 15%, rgba(145,254,46,0.8) 24%, rgba(252,252,40,0.82) 37%, rgba(32,124,202,0.85) 52%, rgba(41,137,216,0.87) 62%, rgba(255,48,48,0.88) 69%, rgba(163,145,179,0.92) 91%, rgba(125,185,232,0.92) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(71,255,50,0.8) 15%,rgba(145,254,46,0.8) 24%,rgba(252,252,40,0.82) 37%,rgba(32,124,202,0.85) 52%,rgba(41,137,216,0.87) 62%,rgba(255,48,48,0.88) 69%,rgba(163,145,179,0.92) 91%,rgba(125,185,232,0.92) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(71,255,50,0.8) 15%,rgba(145,254,46,0.8) 24%,rgba(252,252,40,0.82) 37%,rgba(32,124,202,0.85) 52%,rgba(41,137,216,0.87) 62%,rgba(255,48,48,0.88) 69%,rgba(163,145,179,0.92) 91%,rgba(125,185,232,0.92) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc47ff32', endColorstr='#eb7db9e8',GradientType=0 ); /* IE6-9 */
+
+        }
+    </style>
+</head>
+<body>
+    <div id="txt">문자에 그림자 설정</div>
+    <div id="box">박스에 그림자 설정</div>
+    <div id="gradient"></div>
+</body>
+</html>
