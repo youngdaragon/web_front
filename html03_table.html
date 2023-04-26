@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표만들기</title>
+</head>
+<body>
+    <h1>표만들기</h1>
+    <pre>
+        table태그: 표의 시작
+        tr태그 : 표의 줄생성
+        td태그: 표의 칸 생성
+        th태그: 표의 첫번째줄의 내용을 head로 강조하고자 할 때
+        (진하게 가운데 정렬이 됨)
+    </pre>
+    <table border="1">
+        <tr>
+            <th>제목</th>
+            <th>내용</th>
+            <th>비고</th>
+        </tr>
+        <caption><i><b>표의제목</b></i></caption>
+        <tr>
+            <td>첫번째 칸</td>
+            <td>
+                <ul>
+                    <li>딸기</li>
+                    <li>포도</li>
+                </ul>
+            </td>
+            <td>
+                세번째칸에는 무엇을 넣을까요?
+            </td>
+            <tr>
+                <td>두번째 줄</td>
+                <td>AAAA</td>
+                <td>
+                    <ol>
+                        <li>해바라기</li>
+                        <li>맨드라미</li>
+                        <li>히야신스</li>
+                        <li>안개꽃</li>
+                    </ol>
+                </td>
+            </tr>
+        </tr>
+    </table>
+    <hr/>
+    <pre>
+        표에서 행의 수와 칸수가 다를때
+        colspan속성: 칸을 병합
+        rowspan속성: 행을 병합
+    </pre>
+    <table border="1">
+        <tr>
+            <td>11111111</td>
+            <td colspan="2">22222222</td>
+        </tr>
+        <tr>
+            <td colspan="2">33333333</td>
+            <td>44444444</td>
+        </tr>
+        <tr>
+            <td>55555555</td>
+            <td rowspan="2">66666666</td>
+            <td>77777777</td>
+        </tr>
+        <tr>
+            <td>88888888</td>
+            <td>99999999</td>
+        </tr>
+    </table>
+</body>
+</html>
