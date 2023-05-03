@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>비디오재생</h1>
+    <pre>
+        src : 재생할 영상 파일명
+        controls : 컨트롤러 표시
+        width, height : 폭과 높이 설정
+        loop : 반복횟수
+        muted : 음소거
+        autoplay : 자동재생 - 음소거를 하여야 자동재생이 된다.
+        preload : 전송완료후 재생
+        poster : 재생전에 표시할 이미지
+    </pre>
+    <video controls width="300" poster="./img/flower.jpg">
+        <source src="./audio_movie/Wildlife.mp4"  type="video/mp4"/>
+    </video>
+</body>
+</html>
