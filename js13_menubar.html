@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <script>
+    // Hide the menu initially
+    document.querySelector('.menu').style.display = 'none';
+    </script>
+    <style>
+        .icon {
+            position: relative;
+          }
+          
+          .menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: none;
+          }
+          
+          .icon:hover .menu {
+            display: block;
+          }
+        </style>
+</head>
+<body>
+    <div class="icon">
+        <img src="./img/glass1.gif" alt="Icon">
+        <div class="menu">
+          <ul>
+            <li><a href="#">Menu item 1</a></li>
+            <li><a href="#">Menu item 2</a></li>
+            <li><a href="#">Menu item 3</a></li>
+          </ul>
+        </div>
+      </div>
+</body>
+</html>
