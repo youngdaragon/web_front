@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>star count</title>
+<style>
+ /* Style the rating container */
+.rating {
+  display: inline-block;
+  font-size: 0; /* Remove whitespace between star elements */
+}
+
+/* Style the star elements */
+.star {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("./img/star-empty.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+/* Style the selected stars */
+.star.selected {
+  background-image: url("./img/star-filled.png");
+}
+</style>
+<script>
+// Get all the star elements
+const stars = document.querySelectorAll('.star');
+
+// Add an event listener to each star element
+stars.forEach(function(star) {
+  star.addEventListener('click', function() {
+    // Get the value of the selected star
+    const value = this.getAttribute('data-value');
+
+    // Update the selected and unselected star styles
+    stars.forEach(function(s) {
+      if (s.getAttribute('data-value') <= value) {
+        s.classList.add('selected');
+      } else {
+        s.classList.remove('selected');
+      }
+    });
+
+    // Send the rating data to the server using AJAX or another method
+    // ...
+  });
+});
+</script>
+</head>
+<body>
+    <div class="rating">
+        <div class="star" data-value="1"></div>
+        <div class="star" data-value="2"></div>
+        <div class="star" data-value="3"></div>
+        <div class="star" data-value="4"></div>
+        <div class="star" data-value="5"></div>
+      </div>
+</body>
+</html>
